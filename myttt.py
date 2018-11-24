@@ -5,14 +5,14 @@ board = [str(elements) for elements in range(1, 10)]
 toss_winner = random.randint(1, 2)  # 1 - player 1; 2 - player 2
 toss_loser = 2 if toss_winner == 1 else 1
 win_combination = (
-    (0, 1, 2),
+    (0, 1, 2),  # Horizontal checks
     (3, 4, 5),
     (6, 7, 8),
-    (0, 3, 6),
+    (0, 4, 8),  # Diagonal Checks
+    (2, 4, 6),
+    (0, 3, 6),  # Vertical Checks
     (1, 4, 7),
     (2, 5, 8),
-    (2, 4, 6),
-    (0, 4, 8),
 )
 
 
@@ -56,7 +56,6 @@ def make_move(player, pointer):
 
 if __name__ == "__main__":
     while True:
-
         p1_pointer = input("Do you want to X or O: ").upper()
         print()
 
